@@ -1,6 +1,6 @@
 # A URL shortening service
 
-A scalable, lightening fast URL  shortening service with tracking the URL's to get usage statistics.
+A scalable, lightning-fast URL  shortening service with tracking the URL's to get usage statistics.
 
 
 ## Getting Started
