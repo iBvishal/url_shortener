@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gghf.me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script>
+        function redirect() {
+            var link = document.getElementById('short_url').value
+            console.log(link);
+            openInNewTab(link);
+        }
+        function openInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:#121414;">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                <img src="https://i.ibb.co/wB64dXh/logo4.png" alt="logo2"  width=auto height="100px">
+            </a>
+    
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    </nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="field">
+                <label class="label">Original URL</label>
+                <div class="control">
+                    <input class="input" type="text" name="original_url" value="{{ original_url }}">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">New URL</label>
+                <div class="control">
+                    <input class="input" id="short_url" type="text" name="original_url" 
+                        value="{{ url_for('short.redirect_to_url', short_url=new_link, _external=True) }}">
+                </div>
+
+            </div>
+            <div class="control">
+                <button type="submit" onclick="redirect()" class="button is-info" style="background-color: #56585f;">Check</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
